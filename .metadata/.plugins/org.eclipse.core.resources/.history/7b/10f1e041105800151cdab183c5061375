@@ -1,0 +1,44 @@
+package asu.edu.diging.tutorial.spring.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Service;
+
+import asu.edu.diging.tutorial.spring.domain.Mood;
+
+@Service
+public class MoodService implements IMoodService{
+	
+	List<Mood> moods = new ArrayList<Mood>();
+	Map<String,String> reason = new HashMap<String,String>();
+	
+	@PostConstruct
+	public void init(){
+		moods.add(new Mood("happy"));
+		reason.put("happy", "I cought the mouse today");
+		moods.add(new Mood("sad"));
+		reason.put("sad", "I did not catch the mouse today");
+		moods.add(new Mood("angry"));
+		reason.put("angry", "I did not catch the mouse today");
+		moods.add(new Mood("jolly"));
+		reason.put("jolly", "I did not catch the mouse today");
+		moods.add(new Mood("bored"));
+		reason.put("bored", "I did not see any mouse today");
+		moods.add(new Mood("amused"));
+		reason.put("amused", "I saw lot of mice today");
+	}
+	
+    public Mood getCurrentMood() {
+        return moods.get((int) (moods.size()*Math.random()));
+    }
+    
+    public String getReasonForMood(String feeling){
+    	
+    	
+    }
+}

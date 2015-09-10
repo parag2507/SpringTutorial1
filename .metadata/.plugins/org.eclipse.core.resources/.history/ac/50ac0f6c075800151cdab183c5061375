@@ -1,0 +1,13 @@
+package asu.edu.diging.tutorial.spring.service;
+
+import org.springframework.stereotype.Service;
+
+import asu.edu.diging.tutorial.spring.domain.Mood;
+
+@Service
+public class MoodService {
+
+    public Mood getCurrentMood() {
+        return new Mood("happy");
+    }
+}

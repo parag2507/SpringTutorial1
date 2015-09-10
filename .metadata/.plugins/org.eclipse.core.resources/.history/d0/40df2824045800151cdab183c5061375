@@ -1,0 +1,16 @@
+package asu.edu.diging.tutorial.spring.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+	
+	@Autowired
+	private MoodService service;
+	
+	@RequestMapping(value = "/")
+	public String home() {
+	    return "index";
+	}
+}

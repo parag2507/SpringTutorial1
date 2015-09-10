@@ -1,0 +1,27 @@
+package asu.edu.diging.tutorial.spring.service;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Service;
+
+import asu.edu.diging.tutorial.spring.domain.Mood;
+
+@Service
+public class MoodService {
+	
+	List<Mood> moods;
+	
+	@PostConstruct
+	public void init(){
+		moods.add(new Mood("happy"));
+		moods.add(new Mood("sad"));
+		moods.add(new Mood("angry"));
+		moods.add(new Mood("jolly"));
+	}
+	
+    public Mood getCurrentMood() {
+        return moods(0);
+    }
+}

@@ -1,0 +1,39 @@
+package asu.edu.diging.tutorial.spring.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import asu.edu.diging.tutorial.spring.service.IMoodService;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.ModelAndView;
+
+
+
+@Controller
+public class HomeController {
+	
+	@Autowired
+	private IMoodService service;
+	
+	@RequestMapping(value = "/")
+	public String home(ModelMap map) {
+	    map.addAttribute("mood", service.getCurrentMood());
+	    return "index";
+	}
+	
+	@RequestMapping(value = "/reason/{feeling}")
+	public ModelAndView reason(@PathVariable("feeling") String feeling) {
+	    
+		ModelAndView model =  new ModelAndView("index2");
+		
+		model.getModelMap().put("reason", service.getReasonForMood());
+		
+		model.getModelMap().put("success", 0);
+		
+		return model;
+		
+	}
+}

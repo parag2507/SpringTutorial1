@@ -1,0 +1,5 @@
+package asu.edu.diging.tutorial.spring.web;
+
+public class HomeController {
+
+}

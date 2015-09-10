@@ -1,0 +1,5 @@
+package asu.edu.diging.tutorial.spring.service;
+
+public class MoodService {
+
+}
