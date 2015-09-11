@@ -1,4 +1,4 @@
-package asu.edu.diging.tutorial.spring.service;
+package asu.edu.sd.spring.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Service;
 
-import asu.edu.diging.tutorial.spring.domain.Mood;
+import asu.edu.sd.spring.domain.Mood;
 
 @Service
 public class MoodService implements IMoodService{

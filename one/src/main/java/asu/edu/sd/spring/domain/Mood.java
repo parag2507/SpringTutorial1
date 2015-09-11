@@ -1,4 +1,4 @@
-package asu.edu.diging.tutorial.spring.domain;
+package asu.edu.sd.spring.domain;
 
 public class Mood {
 

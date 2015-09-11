@@ -1,6 +1,6 @@
-package asu.edu.diging.tutorial.spring.service;
+package asu.edu.sd.spring.service;
 
-import asu.edu.diging.tutorial.spring.domain.Mood;
+import asu.edu.sd.spring.domain.Mood;
 
 public interface IMoodService {
 	public Mood getCurrentMood();
