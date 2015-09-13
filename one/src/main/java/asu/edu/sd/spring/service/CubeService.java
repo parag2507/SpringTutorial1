@@ -2,6 +2,7 @@ package asu.edu.sd.spring.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import asu.edu.sd.spring.domain.Cube;
 import asu.edu.sd.spring.domain.Dimension;
+import asu.edu.sd.spring.domain.UnitConstants;
 @Service
 public class CubeService implements ICubeService{
 
@@ -16,12 +18,12 @@ public class CubeService implements ICubeService{
 	
 	@PostConstruct
 	public void init(){
-		unitsList.add("meters");
-		unitsList.add("centimeters");
-		unitsList.add("yards");
-		unitsList.add("inches");
+		Map<String, Map<String, Double>> conversionMap = UnitConstants.CONVERSIONMAP;
+		for(String unit:conversionMap.keySet()){
+			unitsList.add(unit);
+		}
 	}
-	
+
 	@Override
 	public Cube getCube(Dimension dimension) {
 		return null;
