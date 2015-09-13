@@ -2,7 +2,7 @@ package asu.edu.sd.spring.domain;
 
 public class Dimension {
 	private double length;
-	private int unit;
+	private String unit;
 	
 	public double getLength() {
 		return length;
@@ -10,10 +10,10 @@ public class Dimension {
 	public void setLength(double length) {
 		this.length = length;
 	}
-	public int getUnit() {
+	public String getUnit() {
 		return unit;
 	}
-	public void setUnit(int unit) {
+	public void setUnit(String unit) {
 		this.unit = unit;
 	}
 	

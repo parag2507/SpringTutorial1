@@ -27,13 +27,14 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/processDimension")
-	public String processDimension(@ModelAttribute("SpringWeb") DimensionCube input,
-			ModelMap model) {
+	public ModelAndView processDimension(@ModelAttribute("SpringWeb") DimensionCube input
+			) {
 		
-		model.addAttribute("dimension", input.getDimension());
-		model.addAttribute("cube", cubeService.getCube(input.getDimension()));
-
-		return "index";
+		ModelAndView model = new ModelAndView("index");
+		model.addObject("command", input);
+		model.addObject("unitList", cubeService.getUnits());
+		
+		return model;
 	}
 	
 	

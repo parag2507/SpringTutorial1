@@ -4,7 +4,7 @@ public class Cube {
 	
 	private double length;
 	private double volume;
-	private int unit;
+	private String unit;
 	
 	public double getLength() {
 		return length;
@@ -18,10 +18,10 @@ public class Cube {
 	public void setVolume(double volume) {
 		this.volume = volume;
 	}
-	public int getUnit() {
+	public String getUnit() {
 		return unit;
 	}
-	public void setUnit(int unit) {
+	public void setUnit(String unit) {
 		this.unit = unit;
 	}
 	
